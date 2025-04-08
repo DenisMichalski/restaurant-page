@@ -1,45 +1,35 @@
+import './style.css';
 import loadHome from "./home.js";
 import loadMenu from "./menu.js";
 import loadContact from "./contact.js";
 
-const homeButton = document.getElementById('homeButton');
-const menuButton = document.getElementById('menuButton');
-const contactButton = document.getElementById('contactButton');
 
 
-homeButton.addEventListener('click', () => {
-  loadHome;
+function clearContent() {
+  const content = document.querySelector("#content");
+  content.innerText = "";
+}
+
+function addNavListeners() {
+  document.getElementById("homeBtn").addEventListener("click", () => {
+    console.log("Nav-Buttons wurden verbunden");
+
+    clearContent();
+    loadHome();
+  });
+
+document.getElementById("menuBtn").addEventListener("click", () => {
+    clearContent();
+    loadMenu();
 });
-
-menuButton.addEventListener('click', () => {
-  loadMenu;
+  
+  document.getElementById("contactBtn").addEventListener("click", () => {
+    clearContent();
+    loadContact();
+  });
+}
+// Initialize page
+document.addEventListener("DOMContentLoaded", () => {
+  loadHome();
+  addNavListeners();
 });
-
-contactButton.addEventListener('click', () => {
-  loadContact;
-});
-
-loadHome();
-
-// function clearContent() {
-//   const content = document.querySelector("#content");
-//   content.innerText = "";
-// }
-
-// document.addEventListener("DOMContentLoaded", () => {
-//   loadHome();
-
-//   document.getElementById("homeBtn").addEventListener("click", () => {
-//     clearContent();
-//     loadHome();
-//   });
-
-//   document.getElementById("menuBtn").addEventListener("click", () => {
-//     clearContent();
-//     import("./menu.js").then((module) => module.default());
-//   });
-//   document.getElementById("contactBtn").addEventListener("click", () => {
-//     clearContent();
-//     import("./contact.js").then((module) => module.default());
-//   });
-// });

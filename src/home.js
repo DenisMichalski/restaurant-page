@@ -1,3 +1,5 @@
+import restaurantImage from "./assets/restaurant.jpg";
+
 function loadHome() {
   const content = document.getElementById("content");
 
@@ -12,15 +14,14 @@ function loadHome() {
     "Enjoy an unforgettable experience in our restaurant, with excellent cuisine and friendly service.";
 
   const img = document.createElement("img");
-    img.src = "path/to/your-image.jpg"; // Ersetze mit dem Bildpfad
-    img.alt = 'Restaurant Page';
+  img.src = restaurantImage; // Ersetze mit dem Bildpfad
+  img.alt = "Restaurant";
 
-    homeDiv.appendChild(heading);
-    homeDiv.appendChild(paragraph);
-    homeDiv.appendChild(img);
+  homeDiv.appendChild(heading);
+  homeDiv.appendChild(paragraph);
+  homeDiv.appendChild(img);
 
-    content.appendChild(homeDiv);
+  content.appendChild(homeDiv);
 }
 
 export default loadHome;
- 
